@@ -1,11 +1,10 @@
 #include <iostream>
-
 using namespace std;
 
 int width[10], tree[20][2];  // tree 用来存储输入的数据
 int layernum, widthnum;
 
-  
+
 void dfs(int i, int layer) {//i是节点的编号
     width[layer]++;//每多一个节点，对应层数的宽度加1
     if(layer > layernum) layernum = layer;//判断层数的最大值

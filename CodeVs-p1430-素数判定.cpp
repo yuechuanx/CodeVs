@@ -1,18 +1,26 @@
 #include <iostream>
+#include <math.h>
 using namespace std;
+
+bool isPrime(int n);
 
 int main()
 {
-    int a;
-    int flag = 1;
-    cin >> a;
-    for(int i = 2; i < a/2; i++){
-        if(a % i == 0)
-            flag = 0;
-    }
-    if(flag == 0)
-      cout << "\\n" << endl;
-    if(flag == 1)
+    int n;
+    cin >> n;
+    if(isPrime(n))
       cout << "\\t" << endl;
+    else
+      cout << "\\n" << endl;
     return 0;
+}
+
+bool isPrime(int n) {
+  if(n == 1) return false;
+  if(n == 2) return true;
+  for(int i = 2; i < sqrt(n); ++i) {
+    if(n % i == 0)
+      return false;
+  }
+  return true;
 }
